@@ -7,12 +7,16 @@ import { TodoService } from '../todo.service';
 })
 export class ListComponent implements OnInit {
   newTask: string = '';
+  toDos: string[] = [];
   clickme() {
-    this.todoService.toDos.push(this.newTask);
+    //this.todoService.toDos.push(this.newTask);
+    this.toDos = this.todoService.addNewTodo(this.newTask);
     this.newTask = '';
   }
 
   constructor(public todoService: TodoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toDos = this.todoService.toDos;
+  }
 }
