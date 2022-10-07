@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TodoService } from '../todo.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-  toDos: string[] = ['make stuff', 'get smarter', 'job time', 'profit!'];
-
   newTask: string = '';
   clickme() {
-    this.toDos.push(this.newTask);
+    this.todoService.toDos.push(this.newTask);
     this.newTask = '';
   }
 
-  constructor() {}
+  constructor(public todoService: TodoService) {}
 
   ngOnInit(): void {}
 }

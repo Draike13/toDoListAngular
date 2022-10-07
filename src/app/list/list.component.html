@@ -2,5 +2,5 @@
   <input type="text" [(ngModel)]="newTask" />
   <button type="button" (click)="clickme()">Add toDo</button>
 </p>
-<p *ngFor="let toDo of toDos">{{ toDo }}</p>
+<p *ngFor="let toDo of todoService.toDos">{{ toDo }}</p>
 <p>{{ newTask }}</p>
