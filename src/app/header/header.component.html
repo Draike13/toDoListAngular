@@ -1,12 +1,22 @@
 <mat-toolbar>
-  <span>ToDo List</span>
-  <span class="mat-toolbar"></span>
+  <h1>ToDo List</h1>
 
-  <mat-icon
-    (click)="($event)"
-    class="arrow_drop_down-icon"
-    aria-hidden="false"
-    aria-label="arrow drop down icon"
-    >arrow_drop_down-icon</mat-icon
+  <form #taskForm="ngForm" (ngSubmit)="addNewTask(taskForm)">
+    <input ngMode name="task" type="text" />
+  </form>
+
+  <button
+    mat-icon-button
+    color=""
+    aria-label="menu icon"
+    class="menu-button"
+    [matMenuTriggerFor]="menu"
   >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Edit Tasks</button>
+    <button mat-menu-item>Delete Tasks</button>
+  </mat-menu>
 </mat-toolbar>

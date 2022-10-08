@@ -1,3 +1,9 @@
 .arrow_drop_down-icon:hover {
   cursor: pointer;
 }
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
