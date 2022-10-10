@@ -2,7 +2,7 @@
   <h1>ToDo List</h1>
 
   <form #taskForm="ngForm" (ngSubmit)="addNewTask(taskForm)">
-    <input ngMode name="task" type="text" />
+    <input ngModel name="task" type="text" />
   </form>
 
   <button
