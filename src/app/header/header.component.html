@@ -18,6 +18,6 @@
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item>Edit Tasks</button>
-    <button mat-menu-item>Delete Tasks</button>
+    <button mat-menu-item (click)="deleteTask()">Delete Tasks</button>
   </mat-menu>
 </mat-toolbar>

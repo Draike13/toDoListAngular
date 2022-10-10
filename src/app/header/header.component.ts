@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
     console.log(newTask);
     this.todoService.addTodo(newTask);
   }
+
+  deleteTask() {
+    this.todoService.toDos.splice(0, this.todoService.toDos.length);
+  }
 }
