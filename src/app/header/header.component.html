@@ -3,6 +3,7 @@
 
   <form #taskForm="ngForm" (ngSubmit)="addNewTask(taskForm)">
     <input ngModel name="task" type="text" />
+    <button type="submit">Add</button>
   </form>
 
   <button
