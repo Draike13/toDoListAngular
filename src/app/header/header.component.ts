@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
     const newTask = submitData.form.value.task;
     console.log(newTask);
     this.todoService.addTodo(newTask);
+    submitData.form.reset();
   }
 
   deleteTask() {
