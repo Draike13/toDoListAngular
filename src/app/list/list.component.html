@@ -1,3 +1,14 @@
-<div class="todoCardHolder" *ngFor="let toDo of toDos">
-  <mat-card class="todoCard">{{ toDo }}</mat-card>
+<div class="todo-card-holder" *ngFor="let toDo of toDos">
+  <mat-card class="todo-card">
+    <div class="left-side">
+      <mat-card-title class="card-title">{{ toDo }}</mat-card-title>
+      <mat-card-actions class="card-action">
+        <button class="delete-button" mat-button>Delete</button>
+      </mat-card-actions>
+    </div>
+    <div class="right-side">
+      <button mat-icon-button><mat-icon>arrow_upward</mat-icon></button>
+      <button mat-icon-button><mat-icon>arrow_downward</mat-icon></button>
+    </div>
+  </mat-card>
 </div>

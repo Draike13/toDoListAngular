@@ -1,10 +1,25 @@
-.todoCardHolder {
+.todo-card-holder {
   padding: 5px;
 }
-
-.todoCard {
-  justify-content: center;
+.delete-button {
+  font-size: x-small;
+}
+.card-title {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.todo-card {
   display: flex;
-  max-width: 120px;
-  padding: 10px;
+  padding: 0px;
+}
+.left-side {
+  flex: 2;
+}
+
+.right-side {
+  flex: 1;
+}
+.card-action {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
