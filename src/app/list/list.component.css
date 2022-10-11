@@ -1,0 +1,10 @@
+.todoCardHolder {
+  padding: 5px;
+}
+
+.todoCard {
+  justify-content: center;
+  display: flex;
+  max-width: 120px;
+  padding: 10px;
+}
