@@ -1,4 +1,4 @@
-<div class="todo-card-holder" *ngFor="let toDo of toDos">
+<div class="todo-card-holder" *ngFor="let toDo of toDos; let i = index">
   <mat-card class="todo-card">
     <div class="left-side">
       <mat-card-title class="card-title">{{ toDo }}</mat-card-title>
