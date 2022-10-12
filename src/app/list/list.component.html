@@ -3,12 +3,23 @@
     <div class="left-side">
       <mat-card-title class="card-title">{{ toDo }}</mat-card-title>
       <mat-card-actions class="card-action">
-        <button class="delete-button" mat-button>Delete</button>
+        <button (click)="deleteCard(i)" class="delete-button" mat-button>
+          Delete
+        </button>
       </mat-card-actions>
     </div>
     <div class="right-side">
-      <button mat-icon-button><mat-icon>arrow_upward</mat-icon></button>
-      <button mat-icon-button><mat-icon>arrow_downward</mat-icon></button>
+      <button *ngIf="i > 0" (click)="moveUp(i)" mat-icon-button>
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+      <button
+        *ngIf="i < toDos.length - 1"
+        (click)="moveDown(i)"
+        mat-icon-button
+        class="down-arrow"
+      >
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
     </div>
   </mat-card>
 </div>

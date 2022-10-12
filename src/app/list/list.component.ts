@@ -13,4 +13,19 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.toDos = this.todoService.toDos;
   }
+
+  deleteCard(index: number) {
+    this.todoService.toDos.splice(index, 1);
+  }
+
+  moveUp(currentIndex: number) {
+    const removed = this.todoService.toDos.splice(currentIndex, 1);
+    const removedString = removed.toString();
+    this.todoService.toDos.splice(currentIndex - 1, 0, removedString);
+  }
+  moveDown(currentIndex: number) {
+    const removed = this.todoService.toDos.splice(currentIndex, 1);
+    const removedString = removed.toString();
+    this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
+  }
 }
