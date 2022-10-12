@@ -10,7 +10,7 @@
     </div>
     <div class="right-side">
       <button *ngIf="i > 0" (click)="moveUp(i)" mat-icon-button>
-        <mat-icon>arrow_upward</mat-icon>
+        <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
       </button>
       <button
         *ngIf="i < toDos.length - 1"
@@ -18,7 +18,7 @@
         mat-icon-button
         class="down-arrow"
       >
-        <mat-icon>arrow_downward</mat-icon>
+        <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>
       </button>
     </div>
   </mat-card>
