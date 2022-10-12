@@ -11,3 +11,7 @@ mat-toolbar {
 .formSpan {
   padding-right: 8px;
 }
+
+.header-title {
+  margin-right: 8px;
+}
