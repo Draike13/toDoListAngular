@@ -1,25 +1,27 @@
 <div class="todo-card-holder" *ngFor="let toDo of toDos; let i = index">
   <mat-card class="todo-card">
     <div class="left-side">
-      <mat-card-title [ngSwitch]="check" class="card-title">
-        <form
-          *ngSwitchCase="1"
-          #taskForm="ngForm"
-          (ngSubmit)="editTask(taskForm, i)"
-        >
+      <mat-card-title class="card-title">
+        <form #taskForm="ngForm" (ngSubmit)="editTask(taskForm, i)">
           <span class="text-edit-span">
             <label></label>
-            <input ngModel name="task" type="text" placeholder="{{ toDo }}" />
+            <input
+              *ngIf="i === check"
+              ngModel
+              name="task"
+              type="text"
+              placeholder="{{ toDo }}"
+            />
           </span>
         </form>
-        <span *ngSwitchDefault>{{ toDo }}</span>
+        <span *ngIf="i != check">{{ toDo }}</span>
       </mat-card-title>
       <mat-card-actions class="card-action">
         <button (click)="deleteCard(i)" class="delete-button" mat-button>
           Delete
         </button>
-        <button (click)="switchCase()" class="edit-button" mat-button>
-          {{ editText() }}
+        <button (click)="switchCase(i)" class="edit-button" mat-button>
+          {{ editText(i) }}
         </button>
       </mat-card-actions>
     </div>

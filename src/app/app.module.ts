@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, ListComponent],
@@ -30,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
     MatMenuModule,
     MatCardModule,
     MatInputModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

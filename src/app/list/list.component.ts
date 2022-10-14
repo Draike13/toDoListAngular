@@ -8,7 +8,7 @@ import { TodoService } from '../todo.service';
 })
 export class ListComponent implements OnInit {
   toDos: string[] = [];
-  check: number = 0;
+  check: number = -1;
 
   constructor(public todoService: TodoService) {}
 
@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
     const editedTask = formData.form.value.task;
     this.todoService.editCardText(editedTask, index);
     formData.form.reset();
-    this.check = 0;
+    this.check = -1;
   }
 
   moveUp(currentIndex: number) {
@@ -37,15 +37,15 @@ export class ListComponent implements OnInit {
     const removedString = removed.toString();
     this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
   }
-  switchCase() {
-    if (this.check === 0) {
-      this.check = 1;
-    } else this.check = 0;
+  switchCase(index: number) {
+    if (this.check != index) {
+      this.check = index;
+    } else this.check = -1;
   }
 
-  editText() {
-    if (this.check === 0) {
-      return 'Edit';
-    } else return 'Cancel';
+  editText(index: number) {
+    if (this.check === index) {
+      return 'Cancel';
+    } else return 'Edit';
   }
 }
