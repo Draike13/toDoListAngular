@@ -17,7 +17,7 @@
         <span *ngIf="i != check">{{ toDo }}</span>
       </mat-card-title>
       <mat-card-actions class="card-action">
-        <button (click)="deleteCard(i)" class="delete-button" mat-button>
+        <button (click)="deleteTaskDialog(i)" class="delete-button" mat-button>
           Delete
         </button>
         <button (click)="switchCase(i)" class="edit-button" mat-button>

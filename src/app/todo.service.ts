@@ -15,4 +15,12 @@ export class TodoService {
   editCardText(editedFormData: any, indexOfCardToEdit: number) {
     this.toDos.splice(indexOfCardToEdit, 1, editedFormData);
   }
+
+  deleteList() {
+    this.toDos.splice(0, this.toDos.length);
+  }
+
+  deleteCard(index: number) {
+    this.toDos.splice(index, 1);
+  }
 }

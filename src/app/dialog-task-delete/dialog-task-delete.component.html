@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Delete?</h2>
+<mat-dialog-content
+  >Are you sure you want to remove this task</mat-dialog-content
+>
+<mat-dialog-actions>
+  <button
+    (click)="this.todoService.deleteCard(data)"
+    mat-button
+    ckdFocusInitial
+    mat-dialog-close
+  >
+    Yes
+  </button>
+  <button mat-button mat-dialog-close>No</button>
+</mat-dialog-actions>

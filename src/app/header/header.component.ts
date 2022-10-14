@@ -1,6 +1,7 @@
-import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogListDeleteComponent } from '../dialog-list-delete/dialog-list-delete.component';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(public todoService: TodoService) {}
+  constructor(public todoService: TodoService, public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
     submitData.form.reset();
   }
 
-  deleteTask() {
-    this.todoService.toDos.splice(0, this.todoService.toDos.length);
+  deleteListDialog() {
+    this.dialog.open(DialogListDeleteComponent);
   }
 }

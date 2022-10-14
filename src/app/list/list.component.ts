@@ -1,6 +1,7 @@
-import { NgSwitchCase } from '@angular/common';
+import { DialogTaskDeleteComponent } from '../dialog-task-delete/dialog-task-delete.component';
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -10,14 +11,10 @@ export class ListComponent implements OnInit {
   toDos: string[] = [];
   check: number = -1;
 
-  constructor(public todoService: TodoService) {}
+  constructor(public todoService: TodoService, public Dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.toDos = this.todoService.toDos;
-  }
-
-  deleteCard(index: number) {
-    this.todoService.toDos.splice(index, 1);
   }
 
   editTask(formData: any, index: number) {
@@ -47,5 +44,9 @@ export class ListComponent implements OnInit {
     if (this.check === index) {
       return 'Cancel';
     } else return 'Edit';
+  }
+
+  deleteTaskDialog(index: number) {
+    this.Dialog.open(DialogTaskDeleteComponent, {data: index});
   }
 }

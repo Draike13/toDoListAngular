@@ -15,9 +15,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogListDeleteComponent } from './dialog-list-delete/dialog-list-delete.component';
+import { DialogTaskDeleteComponent } from './dialog-task-delete/dialog-task-delete.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ListComponent],
+  declarations: [AppComponent, HeaderComponent, ListComponent, DialogListDeleteComponent, DialogTaskDeleteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +35,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatCardModule,
     MatInputModule,
     MatSidenavModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
