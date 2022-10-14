@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TodoService {
-  toDos: string[] = ['make stuff', 'get smarter', 'job time', 'profit!'];
+  toDos: string[] = ['Make Stuff', 'Get Smarter', 'Job Time', 'Profit!'];
 
   constructor() {}
 

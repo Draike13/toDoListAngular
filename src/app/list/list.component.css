@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .todo-card-holder {
   padding: 5px;
 }
@@ -6,6 +10,7 @@
   width: 40px;
   font-size: x-small;
   padding: 0px 0px;
+  padding-left: 2px;
 }
 
 .edit-button {
@@ -15,7 +20,10 @@
   padding: 0px 0px;
 }
 .card-title {
-  min-width: 160px;
+  font-size: xx-large;
+  min-width: 240px;
+  min-height: 40px;
+  padding-top: 4px;
   margin-top: 8px;
   margin-left: 8px;
 }
@@ -34,13 +42,13 @@
   flex: 1;
 }
 .card-action {
-  margin-left: 0px !important;
+  margin-left: 0;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 .up-arrow-icon {
-  font-size: large;
+  font-size: x-large;
 }
 .down-arrow-icon {
-  font-size: large;
+  font-size: x-large;
 }
