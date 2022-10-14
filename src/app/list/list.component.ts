@@ -1,3 +1,4 @@
+import { NgSwitchCase } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 @Component({
@@ -7,6 +8,7 @@ import { TodoService } from '../todo.service';
 })
 export class ListComponent implements OnInit {
   toDos: string[] = [];
+  check: number = 0;
 
   constructor(public todoService: TodoService) {}
 
@@ -18,6 +20,13 @@ export class ListComponent implements OnInit {
     this.todoService.toDos.splice(index, 1);
   }
 
+  editTask(formData: any, index: number) {
+    const editedTask = formData.form.value.task;
+    this.todoService.editCardText(editedTask, index);
+    formData.form.reset();
+    this.check = 0;
+  }
+
   moveUp(currentIndex: number) {
     const removed = this.todoService.toDos.splice(currentIndex, 1);
     const removedString = removed.toString();
@@ -27,5 +36,8 @@ export class ListComponent implements OnInit {
     const removed = this.todoService.toDos.splice(currentIndex, 1);
     const removedString = removed.toString();
     this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
+  }
+  switchCase() {
+    this.check = 1;
   }
 }
