@@ -9,7 +9,7 @@
         >
           <span class="text-edit-span">
             <label></label>
-            <input ngModel name="task" type="text" />
+            <input ngModel name="task" type="text" placeholder="{{ toDo }}" />
           </span>
         </form>
         <span *ngSwitchDefault>{{ toDo }}</span>
@@ -19,7 +19,7 @@
           Delete
         </button>
         <button (click)="switchCase()" class="edit-button" mat-button>
-          Edit
+          {{ editText() }}
         </button>
       </mat-card-actions>
     </div>

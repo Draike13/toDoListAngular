@@ -38,6 +38,14 @@ export class ListComponent implements OnInit {
     this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
   }
   switchCase() {
-    this.check = 1;
+    if (this.check === 0) {
+      this.check = 1;
+    } else this.check = 0;
+  }
+
+  editText() {
+    if (this.check === 0) {
+      return 'Edit';
+    } else return 'Cancel';
   }
 }

@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, ListComponent],
@@ -28,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
