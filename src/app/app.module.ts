@@ -18,9 +18,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogListDeleteComponent } from './dialog-list-delete/dialog-list-delete.component';
 import { DialogTaskDeleteComponent } from './dialog-task-delete/dialog-task-delete.component';
+import { DialogSaveListComponent } from './dialog-save-list/dialog-save-list.component';
+import { DialogEditTaskComponent } from './dialog-edit-task/dialog-edit-task.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ListComponent, DialogListDeleteComponent, DialogTaskDeleteComponent],
+  declarations: [AppComponent, HeaderComponent, ListComponent, DialogListDeleteComponent, DialogTaskDeleteComponent, DialogSaveListComponent, DialogEditTaskComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

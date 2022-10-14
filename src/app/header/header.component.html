@@ -20,9 +20,10 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Add List</button>
+    <button mat-menu-item (click)="saveListDialog(currentList)">
+      Save List
+    </button>
     <button mat-menu-item (click)="deleteListDialog()">Delete List</button>
   </mat-menu>
 </mat-toolbar>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogListDeleteComponent } from '../dialog-list-delete/dialog-list-delete.component';
+import { DialogSaveListComponent } from '../dialog-save-list/dialog-save-list.component';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { DialogListDeleteComponent } from '../dialog-list-delete/dialog-list-del
 })
 export class HeaderComponent implements OnInit {
   constructor(public todoService: TodoService, public dialog: MatDialog) {}
+  currentList = this.todoService.toDos;
 
   ngOnInit(): void {}
 
@@ -22,5 +24,9 @@ export class HeaderComponent implements OnInit {
 
   deleteListDialog() {
     this.dialog.open(DialogListDeleteComponent);
+  }
+
+  saveListDialog(listToSave: string[]) {
+    this.dialog.open(DialogSaveListComponent);
   }
 }

@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ListComponent implements OnInit {
   toDos: string[] = [];
   check: number = -1;
+  value: string = '';
 
   constructor(public todoService: TodoService, public Dialog: MatDialog) {}
 
@@ -38,6 +39,7 @@ export class ListComponent implements OnInit {
     if (this.check != index) {
       this.check = index;
     } else this.check = -1;
+    this.value = this.todoService.toDos[index];
   }
 
   editText(index: number) {
@@ -47,6 +49,6 @@ export class ListComponent implements OnInit {
   }
 
   deleteTaskDialog(index: number) {
-    this.Dialog.open(DialogTaskDeleteComponent, {data: index});
+    this.Dialog.open(DialogTaskDeleteComponent, { data: index });
   }
 }
