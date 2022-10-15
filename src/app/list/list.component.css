@@ -52,3 +52,14 @@ body {
 .down-arrow-icon {
   font-size: x-large;
 }
+
+.toDo-input {
+  background-color: #424242;
+  font-size: xx-large;
+  max-width: 200px;
+  max-height: 24px;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
+  padding: 0;
+}

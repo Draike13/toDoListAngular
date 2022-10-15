@@ -16,3 +16,11 @@ mat-toolbar {
 .header-title {
   margin-right: 8px;
 }
+
+.task-input {
+  background-color: #212121;
+  font-size: large;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
+}

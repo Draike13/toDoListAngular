@@ -4,7 +4,13 @@
   <form #taskForm="ngForm" (ngSubmit)="addNewTask(taskForm)">
     <span class="formSpan">
       <label>Add Task: </label
-      ><input ngModel name="task" type="text" placeholder="New Task" />
+      ><input
+        class="task-input"
+        ngModel
+        name="task"
+        type="text"
+        placeholder="New Task"
+      />
     </span>
     <span class="buttonSpan">
       <button mat-flat-button type="submit">Add</button>
