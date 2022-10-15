@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-save-list.component.css'],
 })
 export class DialogSaveListComponent implements OnInit {
-  value = 'example';
+  value = 'New List';
 
   constructor() {}
 

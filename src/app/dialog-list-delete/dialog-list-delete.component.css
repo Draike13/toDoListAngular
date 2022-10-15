@@ -1,0 +1,5 @@
+.dialog-list-delete-buttons {
+  display: flex;
+  justify-content: right;
+  padding-top: 16px;
+}

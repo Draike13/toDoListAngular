@@ -2,7 +2,7 @@
 <mat-dialog-content
   >Are you sure you want to remove this task</mat-dialog-content
 >
-<mat-dialog-actions>
+<div class="dialog-task-delete-buttons">
   <button
     (click)="this.todoService.deleteCard(data)"
     mat-button
@@ -12,4 +12,4 @@
     Yes
   </button>
   <button mat-button mat-dialog-close>No</button>
-</mat-dialog-actions>
+</div>

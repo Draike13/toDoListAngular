@@ -39,7 +39,6 @@ export class ListComponent implements OnInit {
     if (this.check != index) {
       this.check = index;
     } else this.check = -1;
-    this.value = this.todoService.toDos[index];
   }
 
   editText(index: number) {

@@ -1,0 +1,9 @@
+.dialog-save-buttons {
+  padding-top: 16px;
+  display: flex;
+  justify-content: right;
+}
+
+.dialog-save-save-button {
+  margin-right: 10px;
+}

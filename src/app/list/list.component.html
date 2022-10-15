@@ -4,13 +4,11 @@
       <mat-card-title class="card-title">
         <form #taskForm="ngForm" (ngSubmit)="editTask(taskForm, i)">
           <span class="text-edit-span">
-            <label></label>
             <input
               *ngIf="i === check"
-              ngModel
               name="task"
               type="text"
-              [(ngModel)]="value"
+              [ngModel]="toDo"
             />
           </span>
         </form>
