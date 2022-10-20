@@ -2,25 +2,36 @@ import { DialogTaskDeleteComponent } from '../dialog-task-delete/dialog-task-del
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { MatDialog } from '@angular/material/dialog';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
   animations: [
     trigger('buttonState', [
-      state('normal', style({
-        backgroundColor: ''
-      })),
-      state('highlighted', style({
-        backgroundColor: 'blue'
-      })),
-      transition('normal <=> highlighted', animate(700))
-    ])
-  ]
+      state(
+        'normal',
+        style({
+          backgroundColor: '',
+        })
+      ),
+      state(
+        'highlighted',
+        style({
+          backgroundColor: 'blue',
+        })
+      ),
+      transition('normal <=> highlighted', animate(700)),
+    ]),
+  ],
 })
 export class ListComponent implements OnInit {
-  state = 'normal';
   toDos: string[] = [];
   check: number = -1;
   value: string = '';
@@ -64,8 +75,11 @@ export class ListComponent implements OnInit {
     this.Dialog.open(DialogTaskDeleteComponent, { data: index });
   }
 
-animatedButton(formData: any){
-  console.log(formData.form)
-  formData.form.state == 'normal' ? formData.form.state = 'highlighted' : formData.form.state = 'normal';
-}
+  animatedButton(formData: any) {
+    console.log(formData.form);
+    const buttonChangeForm = formData.form.value.task;
+    this.todoService.state == 'normal'
+      ? (this.todoService.state = 'highlighted')
+      : (this.todoService.state = 'normal');
+  }
 }

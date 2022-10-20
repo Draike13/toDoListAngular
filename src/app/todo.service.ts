@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TodoService {
-  state = 'normal';
+  state: string = 'normal';
   toDos: string[] = ['Make Stuff', 'Get Smarter', 'Job Time', 'Profit!'];
 
   constructor() {}
@@ -15,8 +15,6 @@ export class TodoService {
 
   editCardText(editedFormData: any, indexOfCardToEdit: number) {
     this.toDos.splice(indexOfCardToEdit, 1, editedFormData);
-    // this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
-
   }
 
   deleteList() {

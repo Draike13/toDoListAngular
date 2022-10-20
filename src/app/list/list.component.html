@@ -19,7 +19,13 @@
         <button (click)="deleteTaskDialog(i)" class="delete-button" mat-button>
           Delete
         </button>
-        <button (click)='animatedButton(taskForm)' (click)="switchCase(i)" class="edit-button" mat-button [@buttonState]="state">
+        <button
+          (click)="animatedButton(taskForm)"
+          (click)="switchCase(i)"
+          class="edit-button"
+          mat-button
+          [@buttonState]="this.todoService.state"
+        >
           {{ editText(i) }}
         </button>
       </mat-card-actions>
