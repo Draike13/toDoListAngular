@@ -4,10 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TodoService {
-  state: string = 'normal';
+  state: {[number: number] : string} = {}
   toDos: string[] = ['Make Stuff', 'Get Smarter', 'Job Time', 'Profit!'];
 
-  constructor() {}
+  constructor() {
+    this.toDos.forEach((todo, index) => {
+      this.state[index] = 'normal'
+    })
+  }
 
   addTodo(newTodo: string) {
     this.toDos.push(newTodo);

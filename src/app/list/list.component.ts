@@ -47,6 +47,7 @@ export class ListComponent implements OnInit {
     this.todoService.editCardText(editedTask, index);
     formData.form.reset();
     this.check = -1;
+    this.todoService.state[index] = 'normal'
   }
 
   moveUp(currentIndex: number) {
@@ -60,6 +61,10 @@ export class ListComponent implements OnInit {
     this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
   }
   switchCase(index: number) {
+    this.todoService.state[index] === 'normal'
+      ? (this.todoService.state[index] = 'highlighted')
+      : (this.todoService.state[index] = 'normal');
+
     if (this.check != index) {
       this.check = index;
     } else this.check = -1;
@@ -68,7 +73,7 @@ export class ListComponent implements OnInit {
   editText(index: number) {
     if (this.check === index) {
       return 'Cancel';
-    } else return 'Edit';
+    } else this.todoService.state[index] = 'normal'; return 'Edit';
   }
 
   deleteTaskDialog(index: number) {
@@ -76,10 +81,6 @@ export class ListComponent implements OnInit {
   }
 
   animatedButton(formData: any) {
-    console.log(formData.form);
-    const buttonChangeForm = formData.form.value.task;
-    this.todoService.state == 'normal'
-      ? (this.todoService.state = 'highlighted')
-      : (this.todoService.state = 'normal');
+
   }
 }

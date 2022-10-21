@@ -24,7 +24,7 @@
           (click)="switchCase(i)"
           class="edit-button"
           mat-button
-          [@buttonState]="this.todoService.state"
+          [@buttonState]="this.todoService.state[i]"
         >
           {{ editText(i) }}
         </button>
