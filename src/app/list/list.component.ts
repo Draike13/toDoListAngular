@@ -47,7 +47,7 @@ export class ListComponent implements OnInit {
     this.todoService.editCardText(editedTask, index);
     formData.form.reset();
     this.check = -1;
-    this.todoService.state[index] = 'normal'
+    this.todoService.state[index] = 'normal';
   }
 
   moveUp(currentIndex: number) {
@@ -73,14 +73,11 @@ export class ListComponent implements OnInit {
   editText(index: number) {
     if (this.check === index) {
       return 'Cancel';
-    } else this.todoService.state[index] = 'normal'; return 'Edit';
+    } else this.todoService.state[index] = 'normal';
+    return 'Edit';
   }
 
   deleteTaskDialog(index: number) {
     this.Dialog.open(DialogTaskDeleteComponent, { data: index });
-  }
-
-  animatedButton(formData: any) {
-
   }
 }
