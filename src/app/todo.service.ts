@@ -4,21 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TodoService {
-  state: {[number: number] : string} = {}
-  toDos: string[] = ['Make Stuff', 'Get Smarter', 'Job Time', 'Profit!'];
+  state: { [number: number]: string } = {};
+  toDos: { text: string }[] = [
+    { text: 'Make Stuff' },
+    { text: 'Get Smarter' },
+    { text: 'Job Time' },
+    { text: 'Profit!' },
+  ];
 
   constructor() {
     this.toDos.forEach((todo, index) => {
-      this.state[index] = 'normal'
-    })
+      this.state[index] = 'normal';
+    });
   }
 
   addTodo(newTodo: string) {
-    this.toDos.push(newTodo);
+    this.toDos.push({ text: newTodo });
   }
 
   editCardText(editedFormData: any, indexOfCardToEdit: number) {
-    this.toDos.splice(indexOfCardToEdit, 1, editedFormData);
+    this.toDos.splice(indexOfCardToEdit, 1, { text: editedFormData });
   }
 
   deleteList() {

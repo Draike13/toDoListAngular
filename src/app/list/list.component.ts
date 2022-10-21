@@ -24,15 +24,15 @@ import {
       state(
         'highlighted',
         style({
-          backgroundColor: 'blue',
+          backgroundColor: '#360601',
         })
       ),
-      transition('normal <=> highlighted', animate(700)),
+      transition('normal <=> highlighted', animate(450)),
     ]),
   ],
 })
 export class ListComponent implements OnInit {
-  toDos: string[] = [];
+  toDos: { text: string }[] = [];
   check: number = -1;
   value: string = '';
 
@@ -52,14 +52,16 @@ export class ListComponent implements OnInit {
 
   moveUp(currentIndex: number) {
     const removed = this.todoService.toDos.splice(currentIndex, 1);
-    const removedString = removed.toString();
-    this.todoService.toDos.splice(currentIndex - 1, 0, removedString);
+    const objectToReturn: any = removed.at(0);
+    this.todoService.toDos.splice(currentIndex - 1, 0, objectToReturn);
   }
+
   moveDown(currentIndex: number) {
     const removed = this.todoService.toDos.splice(currentIndex, 1);
-    const removedString = removed.toString();
-    this.todoService.toDos.splice(currentIndex + 1, 0, removedString);
+    const objectToReturn: any = removed.at(0);
+    this.todoService.toDos.splice(currentIndex + 1, 0, objectToReturn);
   }
+
   switchCase(index: number) {
     this.todoService.state[index] === 'normal'
       ? (this.todoService.state[index] = 'highlighted')

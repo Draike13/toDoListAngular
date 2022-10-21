@@ -11,7 +11,7 @@ import { DialogSaveListComponent } from '../dialog-save-list/dialog-save-list.co
 })
 export class HeaderComponent implements OnInit {
   constructor(public todoService: TodoService, public dialog: MatDialog) {}
-  currentList = this.todoService.toDos;
+  currentList: any = this.todoService.toDos;
 
   ngOnInit(): void {}
 

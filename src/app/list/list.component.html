@@ -8,12 +8,12 @@
               *ngIf="i === check"
               name="task"
               type="text"
-              [ngModel]="toDo"
+              [ngModel]="toDo.text"
               class="toDo-input"
             />
           </span>
         </form>
-        <span *ngIf="i != check">{{ toDo }}</span>
+        <span *ngIf="i != check">{{ toDo.text }}</span>
       </mat-card-title>
       <mat-card-actions class="card-action">
         <button (click)="deleteTaskDialog(i)" class="delete-button" mat-button>
@@ -30,17 +30,24 @@
       </mat-card-actions>
     </div>
     <div class="right-side">
-      <button [disabled]="i <= 0" (click)="moveUp(i)" mat-icon-button>
-        <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
-      </button>
-      <button
-        [disabled]="i >= toDos.length - 1"
-        (click)="moveDown(i)"
-        mat-icon-button
-        class="down-arrow"
-      >
-        <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>
-      </button>
+      <div class="button-container">
+        <button [disabled]="i <= 0" (click)="moveUp(i)" mat-icon-button>
+          <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
+        </button>
+      </div>
+      <div class="button-container">
+        <button
+          [disabled]="i >= toDos.length - 1"
+          (click)="moveDown(i)"
+          mat-icon-button
+          class="down-arrow"
+        >
+          <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>
+        </button>
+      </div>
+      <div>
+        <button class="complete-button" mat-button>Complete</button>
+      </div>
     </div>
   </mat-card>
 </div>
