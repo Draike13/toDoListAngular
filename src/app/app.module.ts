@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogListDeleteComponent } from './dialog-list-delete/dialog-list-delete.component';
 import { DialogTaskDeleteComponent } from './dialog-task-delete/dialog-task-delete.component';
 import { DialogSaveListComponent } from './dialog-save-list/dialog-save-list.component';
+import { TodoCardComponent } from './list/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DialogSaveListComponent } from './dialog-save-list/dialog-save-list.com
     DialogListDeleteComponent,
     DialogTaskDeleteComponent,
     DialogSaveListComponent,
+    TodoCardComponent,
   ],
   imports: [
     BrowserModule,

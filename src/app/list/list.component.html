@@ -1,53 +1,5 @@
-<div class="todo-card-holder" *ngFor="let toDo of toDos; let i = index">
-  <mat-card class="todo-card">
-    <div class="left-side">
-      <mat-card-title class="card-title">
-        <form #taskForm="ngForm" (ngSubmit)="editTask(taskForm, i)">
-          <span class="text-edit-span">
-            <input
-              *ngIf="i === check"
-              name="task"
-              type="text"
-              [ngModel]="toDo.text"
-              class="toDo-input"
-            />
-          </span>
-        </form>
-        <span *ngIf="i != check">{{ toDo.text }}</span>
-      </mat-card-title>
-      <mat-card-actions class="card-action">
-        <button (click)="deleteTaskDialog(i)" class="delete-button" mat-button>
-          Delete
-        </button>
-        <button
-          (click)="switchCase(i)"
-          class="edit-button"
-          mat-button
-          [@buttonState]="this.todoService.state[i]"
-        >
-          {{ editText(i) }}
-        </button>
-      </mat-card-actions>
-    </div>
-    <div class="right-side">
-      <div class="button-container">
-        <button [disabled]="i <= 0" (click)="moveUp(i)" mat-icon-button>
-          <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
-        </button>
-      </div>
-      <div class="button-container">
-        <button
-          [disabled]="i >= toDos.length - 1"
-          (click)="moveDown(i)"
-          mat-icon-button
-          class="down-arrow"
-        >
-          <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>
-        </button>
-      </div>
-      <div>
-        <button class="complete-button" mat-button>Complete</button>
-      </div>
-    </div>
-  </mat-card>
-</div>
+<app-todo-card
+  *ngFor="let toDo of toDos; let i = index"
+  [toDo]="toDo"
+  [i]="i"
+></app-todo-card>

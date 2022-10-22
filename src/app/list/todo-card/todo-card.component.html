@@ -1,0 +1,46 @@
+<mat-card class="todo-card-holder">
+  <div class="left-side">
+    <mat-card-title class="card-title">
+      <form #taskForm="ngForm" (ngSubmit)="editTask(taskForm, i)">
+        <span class="text-edit-span">
+          <input
+            *ngIf="isEditing"
+            name="task"
+            type="text"
+            [ngModel]="toDo.text"
+            class="toDo-input"
+          />
+        </span>
+      </form>
+      <span *ngIf="!isEditing">{{ toDo.text }}</span>
+    </mat-card-title>
+    <mat-card-actions class="card-action">
+      <button (click)="deleteTaskDialog(i)" class="delete-button" mat-button>
+        Delete
+      </button>
+      <button (click)="toggleEdit()" class="edit-button" mat-button>
+        {{ isEditing ? "Cancel" : "Edit" }}
+      </button>
+    </mat-card-actions>
+  </div>
+  <div class="right-side">
+    <div class="button-container">
+      <button [disabled]="i <= 0" (click)="moveUp(i)" mat-icon-button>
+        <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
+      </button>
+    </div>
+    <div class="button-container">
+      <button
+        [disabled]="i >= todoService.toDos.length - 1"
+        (click)="moveDown(i)"
+        mat-icon-button
+        class="down-arrow"
+      >
+        <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button class="complete-button" mat-button>Complete</button>
+    </div>
+  </div>
+</mat-card>

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-
+import { Todo } from './todo.model';
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
   state: { [number: number]: string } = {};
-  toDos: { text: string }[] = [
+
+  toDos: Todo[] = [
     { text: 'Make Stuff' },
     { text: 'Get Smarter' },
     { text: 'Job Time' },
