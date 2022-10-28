@@ -29,4 +29,8 @@ export class HeaderComponent implements OnInit {
   saveListDialog(listToSave: string[]) {
     this.dialog.open(DialogSaveListComponent);
   }
+
+  showCompleted() {}
+
+  showDeleted() {}
 }
