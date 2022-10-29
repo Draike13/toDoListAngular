@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
   addNewTask(submitData: any) {
     const newTask = submitData.form.value.task;
-    console.log(newTask);
     this.todoService.addTodo(newTask);
     submitData.form.reset();
   }

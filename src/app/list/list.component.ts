@@ -9,6 +9,8 @@ import { Todo } from '../todo.model';
 })
 export class ListComponent implements OnInit {
   toDos: Todo[] = [];
+  deletedToDos: Todo[] = [];
+  completedToDos: Todo[] = [];
   check: number = -1;
   value: string = '';
 
@@ -16,9 +18,9 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.toDos = this.todoService.toDos;
+    this.deletedToDos = this.todoService.deletedToDos;
+    this.completedToDos = this.todoService.completedToDos;
   }
 
-  // this.todoService.state[index] === 'normal'
   //   ? (this.todoService.state[index] = 'highlighted')
-  //   : (this.todoService.state[index] = 'normal');
 }

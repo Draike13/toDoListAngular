@@ -12,6 +12,8 @@ export class TodoService {
     { text: 'Job Time' },
     { text: 'Profit!' },
   ];
+  deletedToDos: Todo[] = [];
+  completedToDos: Todo[] = [];
 
   constructor() {
     this.toDos.forEach((todo, index) => {
@@ -34,6 +36,8 @@ export class TodoService {
   }
 
   deleteCard(index: number) {
-    this.toDos.splice(index, 1);
+    let deletedCard = this.toDos.splice(index, 1);
+    this.deletedToDos.splice(this.deletedToDos.length + 1, 0, deletedCard[0]);
+    console.log(this.deletedToDos);
   }
 }

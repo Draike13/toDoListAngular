@@ -14,9 +14,7 @@ export class TodoCardComponent implements OnInit {
   isEditing: boolean = false;
   constructor(public todoService: TodoService, public dialog: MatDialog) {}
 
-  ngOnInit(): void {
-    console.log(this.toDo, this.i);
-  }
+  ngOnInit(): void {}
 
   deleteTaskDialog(index: number) {
     this.dialog.open(DialogTaskDeleteComponent, { data: index });
@@ -30,7 +28,6 @@ export class TodoCardComponent implements OnInit {
     this.todoService.editCardText(editedTask, index);
     formData.form.reset();
     this.toggleEdit();
-    //this.todoService.state[index] = 'normal';
   }
 
   moveUp(currentIndex: number) {
