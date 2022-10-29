@@ -9,7 +9,7 @@ import { DialogTaskDeleteComponent } from 'src/app/dialog-task-delete/dialog-tas
   styleUrls: ['./todo-card.component.css'],
 })
 export class TodoCardComponent implements OnInit {
-  @Input() toDo: Todo = { text: '', completed: false, deleted: false };
+  @Input() toDo: Todo = { text: '' };
   @Input() i: number = 0;
   isEditing: boolean = false;
   constructor(public todoService: TodoService, public dialog: MatDialog) {}
