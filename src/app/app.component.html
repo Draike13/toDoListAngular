@@ -1,2 +1,23 @@
 <app-header></app-header>
-<div class="app-container"><app-list></app-list></div>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Saved Lists</p>
+    <p *ngIf="showFiller"></p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="right-container">
+    <button
+      class="toggle-button"
+      type="button"
+      mat-button
+      (click)="drawer.toggle()"
+    >
+      >>
+    </button>
+    <app-list class="the-app-list"></app-list>
+  </div>
+</mat-drawer-container>

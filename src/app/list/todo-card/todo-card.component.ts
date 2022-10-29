@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from 'src/app/todo.model';
 import { TodoService } from 'src/app/todo.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogTaskDeleteComponent } from 'src/app/Dialog Boxes/dialog-task-delete/dialog-task-delete.component';
+import { DialogTaskDeleteComponent } from 'src/app/dialog-task-delete/dialog-task-delete.component';
 import { DialogTaskCompleteComponent } from 'src/app/Dialog Boxes/dialog-task-complete/dialog-task-complete.component';
 @Component({
   selector: 'app-todo-card',

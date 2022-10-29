@@ -17,7 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogListDeleteComponent } from './Dialog Boxes/dialog-list-delete/dialog-list-delete.component';
-import { DialogTaskDeleteComponent } from './Dialog Boxes/dialog-task-delete/dialog-task-delete.component';
+import { DialogTaskDeleteComponent } from './dialog-task-delete/dialog-task-delete.component';
 import { DialogSaveListComponent } from './Dialog Boxes/dialog-save-list/dialog-save-list.component';
 import { TodoCardComponent } from './list/todo-card/todo-card.component';
 import { DialogTaskCompleteComponent } from './Dialog Boxes/dialog-task-complete/dialog-task-complete.component';
