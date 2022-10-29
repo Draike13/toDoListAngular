@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Finished?</h2>
+<mat-dialog-content>Have you compelted this task?</mat-dialog-content>
+<div class="dialog-task-complete-buttons">
+  <button
+    (click)="this.todoService.completeCard(data)"
+    mat-button
+    ckdFocusInitial
+    mat-dialog-close
+  >
+    Yes
+  </button>
+  <button mat-button mat-dialog-close>No</button>
+</div>

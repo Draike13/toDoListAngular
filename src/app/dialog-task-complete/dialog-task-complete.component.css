@@ -1,0 +1,5 @@
+.dialog-task-complete-buttons {
+  display: flex;
+  justify-content: right;
+  padding-top: 16px;
+}

@@ -40,7 +40,13 @@
       </button>
     </div>
     <div>
-      <button class="complete-button" mat-button>Complete</button>
+      <button
+        (click)="completeTaskDialog(i)"
+        class="complete-button"
+        mat-button
+      >
+        Complete
+      </button>
     </div>
   </div>
 </mat-card>

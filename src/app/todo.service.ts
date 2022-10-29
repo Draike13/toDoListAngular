@@ -40,4 +40,12 @@ export class TodoService {
     this.deletedToDos.splice(this.deletedToDos.length + 1, 0, deletedCard[0]);
     console.log(this.deletedToDos);
   }
+  completeCard(index: number) {
+    let completedCard = this.toDos.splice(index, 1);
+    this.completedToDos.splice(
+      this.completedToDos.length + 1,
+      0,
+      this.completedToDos[0]
+    );
+  }
 }

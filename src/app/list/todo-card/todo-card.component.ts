@@ -3,6 +3,7 @@ import { Todo } from 'src/app/todo.model';
 import { TodoService } from 'src/app/todo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogTaskDeleteComponent } from 'src/app/dialog-task-delete/dialog-task-delete.component';
+import { DialogTaskCompleteComponent } from 'src/app/dialog-task-complete/dialog-task-complete.component';
 @Component({
   selector: 'app-todo-card',
   templateUrl: './todo-card.component.html',
@@ -18,6 +19,9 @@ export class TodoCardComponent implements OnInit {
 
   deleteTaskDialog(index: number) {
     this.dialog.open(DialogTaskDeleteComponent, { data: index });
+  }
+  completeTaskDialog(index: number) {
+    this.dialog.open(DialogTaskCompleteComponent, { data: index });
   }
   toggleEdit() {
     this.isEditing = !this.isEditing;
