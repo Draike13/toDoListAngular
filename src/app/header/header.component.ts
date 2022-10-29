@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogListDeleteComponent } from '../dialog-list-delete/dialog-list-delete.component';
-import { DialogSaveListComponent } from '../dialog-save-list/dialog-save-list.component';
+import { DialogListDeleteComponent } from '../Dialog Boxes/dialog-list-delete/dialog-list-delete.component';
+import { DialogSaveListComponent } from '../Dialog Boxes/dialog-save-list/dialog-save-list.component';
 
 @Component({
   selector: 'app-header',
