@@ -16,6 +16,15 @@ body {
   padding-right: 2px;
 }
 
+.add-button {
+  min-width: 25px;
+  width: 25px;
+  font-size: large;
+  padding: 0px 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .delete-button:hover {
   background-color: #360601;
   transition: 450ms ease-out;
@@ -31,13 +40,6 @@ body {
 .edit-button:hover {
   background-color: #143601;
   transition: 450ms ease-out;
-}
-
-.add-button {
-  background-color: transparent;
-  border-color: transparent;
-  color: white;
-  font-size: large;
 }
 
 .add-button:hover {

@@ -21,7 +21,13 @@
       <button (click)="toggleEdit()" class="edit-button" mat-button>
         {{ isEditing ? "Cancel" : "Edit" }}
       </button>
-      <button *ngIf="i >= todoService.toDos.length - 1" class="add-button">
+      <button
+        (click)="addTaskDialog()"
+        class="add-button"
+        mat-button
+        *ngIf="i >= todoService.toDos.length - 1"
+        class="add-button"
+      >
         +
       </button>
     </mat-card-actions>

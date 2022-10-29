@@ -15,12 +15,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addNewTask(submitData: any) {
-    const newTask = submitData.form.value.task;
-    this.todoService.addTodo(newTask);
-    submitData.form.reset();
-  }
-
   deleteListDialog() {
     this.dialog.open(DialogListDeleteComponent);
   }

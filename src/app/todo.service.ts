@@ -21,10 +21,6 @@ export class TodoService {
     });
   }
 
-  addTodo(newTodo: string) {
-    this.toDos.push({ text: newTodo });
-  }
-
   editCardText(editedFormData: any, indexOfCardToEdit: number) {
     this.toDos.splice(indexOfCardToEdit, 1, {
       text: editedFormData,
@@ -47,5 +43,11 @@ export class TodoService {
       0,
       this.completedToDos[0]
     );
+  }
+
+  addNewTask(submitData: any) {
+    const newTask = submitData.form.value.task;
+    this.toDos.push({ text: newTask });
+    submitData.form.reset();
   }
 }
