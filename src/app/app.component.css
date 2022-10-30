@@ -2,4 +2,20 @@
   display: flex;
   justify-content: left;
   background-color: black;
+  min-height: vh;
+  height: vh;
+}
+.sidenav {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  padding: 8px;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+}
+.mat-drawer-container {
+  background-color: black;
 }

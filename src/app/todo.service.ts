@@ -47,7 +47,14 @@ export class TodoService {
 
   addNewTask(submitData: any) {
     const newTask = submitData.form.value.task;
-    this.toDos.push({ text: newTask });
-    submitData.form.reset();
+    if (
+      newTask != '' &&
+      newTask != ' ' &&
+      newTask != '  ' &&
+      newTask != '   '
+    ) {
+      this.toDos.push({ text: newTask });
+      submitData.form.reset();
+    } else submitData.form.reset();
   }
 }

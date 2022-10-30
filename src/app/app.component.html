@@ -1,12 +1,13 @@
 <app-header></app-header>
 
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Saved Lists</p>
-    <p *ngIf="showFiller"></p>
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p class="title">Saved Lists</p>
+
     <button (click)="showFiller = !showFiller" mat-raised-button>
       Toggle extra text
     </button>
+    <p *ngIf="showFiller"><button mat-button>delete</button></p>
   </mat-drawer>
 
   <div class="right-container">
