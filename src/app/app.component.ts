@@ -10,17 +10,7 @@ import { TodoService } from './todo.service';
 })
 export class AppComponent {
   title = 'toDoListAngular';
-  showFiller = false;
-  savedListsArray: any;
-
   constructor(public todoService: TodoService) {}
 
-  ngOnInit(): void {
-    this.savedListsArray = this.todoService.savedListsArray;
-  }
-  reloadList(drawer: any, index: number) {
-    const grabbedList: Todo[] = this.savedListsArray[index].list.slice(0);
-    this.todoService.replaceTodoList(grabbedList);
-    drawer.toggle();
-  }
+  ngOnInit(): void {}
 }

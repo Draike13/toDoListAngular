@@ -1,0 +1,13 @@
+<div class="saved-button-holder">
+  <button (click)="switchFiller()" class="list-button" mat-raised-button>
+    {{ list.listName }}
+  </button>
+  <p *ngIf="showFiller">
+    <button mat-button class="button-icon">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <button (click)="reloadList(i)" class="button-icon" mat-button>
+      <mat-icon>launch</mat-icon>
+    </button>
+  </p>
+</div>

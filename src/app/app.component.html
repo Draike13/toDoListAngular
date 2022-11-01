@@ -3,17 +3,14 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <p class="title">Saved Lists</p>
-    <button
-      *ngFor="let list of savedListsArray; let i = index"
-      (click)="reloadList(drawer, i)"
-      mat-button
-    >
-      {{ list.listName }}
-    </button>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
+    <app-saved-lists
+      *ngFor="let list of this.todoService.savedListsArray; let i = index"
+      [list]="list"
+      [i]="i"
+    ></app-saved-lists>
+    <!-- <button (click)="showFiller = !showFiller" mat-raised-button>
       List Name Here:
-    </button>
-    <p *ngIf="showFiller"><button mat-button>delete</button></p>
+    </button> -->
   </mat-drawer>
 
   <div class="right-container">

@@ -1,0 +1,9 @@
+.list-button {
+  padding: 4px;
+  margin: 4px;
+  display: flex;
+}
+
+.button-icon {
+  font-size: large;
+}

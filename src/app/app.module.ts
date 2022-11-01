@@ -22,6 +22,7 @@ import { DialogSaveListComponent } from './Dialog Boxes/dialog-save-list/dialog-
 import { TodoCardComponent } from './list/todo-card/todo-card.component';
 import { DialogTaskCompleteComponent } from './Dialog Boxes/dialog-task-complete/dialog-task-complete.component';
 import { DialogTaskAddComponent } from './Dialog Boxes/dialog-task-add/dialog-task-add.component';
+import { SavedListsComponent } from './saved-lists/saved-lists.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DialogTaskAddComponent } from './Dialog Boxes/dialog-task-add/dialog-ta
     TodoCardComponent,
     DialogTaskCompleteComponent,
     DialogTaskAddComponent,
+    SavedListsComponent,
   ],
   imports: [
     BrowserModule,

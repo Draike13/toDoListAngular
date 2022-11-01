@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
 import { Subject } from 'rxjs';
 import { SavedList, Todo } from './todo.model';
 @Injectable({
@@ -16,7 +15,12 @@ export class TodoService {
   ];
   deletedToDos: Todo[] = [];
   completedToDos: Todo[] = [];
-  savedListsArray: SavedList[] = [{ list: [], listName: '' }];
+  savedListsArray: SavedList[] = [
+    {
+      list: [this.toDos[0], this.toDos[1], this.toDos[2], this.toDos[3]],
+      listName: 'Default List',
+    },
+  ];
   todoSubject: Subject<Todo[]> = new Subject<Todo[]>();
 
   constructor() {
@@ -77,7 +81,9 @@ export class TodoService {
   createSavedList(listName: string) {
     let list: Todo[] = this.toDos.splice(0, this.toDos.length);
     let savedList: SavedList = { listName: listName, list: list };
+    console.log(this.savedListsArray);
     this.savedListsArray.push(savedList);
+    console.log(this.savedListsArray);
     this.todoSubject.next(this.toDos);
   }
 

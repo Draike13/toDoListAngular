@@ -2,12 +2,12 @@
   display: flex;
   justify-content: left;
   background-color: black;
-  min-height: vh;
-  height: vh;
+  min-height: 500px;
 }
 .sidenav {
   display: flex;
   justify-content: center;
+  max-width: 200px;
 }
 
 .title {
