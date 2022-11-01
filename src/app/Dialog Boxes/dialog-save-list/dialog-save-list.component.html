@@ -16,6 +16,7 @@
 </mat-dialog-actions>
 <div class="dialog-save-buttons">
   <button
+    (click)="this.todoService.createSavedList(value)"
     class="dialog-save-save-button"
     mat-button
     mat-dialog-close

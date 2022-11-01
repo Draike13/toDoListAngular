@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/todo.service';
 
 @Component({
   selector: 'app-dialog-save-list',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DialogSaveListComponent implements OnInit {
   value = 'New List';
 
-  constructor() {}
+  constructor(public todoService: TodoService) {}
 
   ngOnInit(): void {}
 }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo.model';
+import { TitleStrategy } from '@angular/router';
+import { Subject } from 'rxjs';
+import { SavedList, Todo } from './todo.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,35 +16,48 @@ export class TodoService {
   ];
   deletedToDos: Todo[] = [];
   completedToDos: Todo[] = [];
+  savedListsArray: SavedList[] = [{ list: [], listName: '' }];
+  todoSubject: Subject<Todo[]> = new Subject<Todo[]>();
 
   constructor() {
     this.toDos.forEach((todo, index) => {
       this.state[index] = 'normal';
     });
+    this.todoSubject.next(this.toDos);
   }
 
   editCardText(editedFormData: any, indexOfCardToEdit: number) {
     this.toDos.splice(indexOfCardToEdit, 1, {
       text: editedFormData,
     });
+    this.todoSubject.next(this.toDos);
   }
 
   deleteList() {
     this.toDos.splice(0, this.toDos.length);
+    this.todoSubject.next(this.toDos);
   }
 
   deleteCard(index: number) {
     let deletedCard = this.toDos.splice(index, 1);
-    this.deletedToDos.splice(this.deletedToDos.length + 1, 0, deletedCard[0]);
-    console.log(this.deletedToDos);
+    this.deletedToDos.splice(this.deletedToDos.length + 1, 0, ...deletedCard);
+    this.todoSubject.next(this.toDos);
   }
+
+  deleteCard2(index: number) {
+    let deletedCard = this.toDos.splice(index, 1);
+    this.deletedToDos.push(...deletedCard);
+    this.todoSubject.next(this.toDos);
+  }
+
   completeCard(index: number) {
     let completedCard = this.toDos.splice(index, 1);
     this.completedToDos.splice(
       this.completedToDos.length + 1,
       0,
-      this.completedToDos[0]
+      ...this.completedToDos
     );
+    this.todoSubject.next(this.toDos);
   }
 
   addNewTask(submitData: any) {
@@ -56,5 +71,25 @@ export class TodoService {
       this.toDos.push({ text: newTask });
       submitData.form.reset();
     } else submitData.form.reset();
+    this.todoSubject.next(this.toDos);
+  }
+
+  createSavedList(listName: string) {
+    let list: Todo[] = this.toDos.splice(0, this.toDos.length);
+    let savedList: SavedList = { listName: listName, list: list };
+    this.savedListsArray.push(savedList);
+    this.todoSubject.next(this.toDos);
+  }
+
+  createSavedList2(listName: string) {
+    let savedList: SavedList = { listName: listName, list: this.toDos.slice() };
+    this.savedListsArray.push(savedList);
+    this.toDos = [];
+    this.todoSubject.next(this.toDos);
+  }
+
+  replaceTodoList(newList: Todo[]) {
+    this.toDos = newList;
+    this.todoSubject.next(this.toDos);
   }
 }

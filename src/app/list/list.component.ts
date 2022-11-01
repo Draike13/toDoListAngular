@@ -17,6 +17,9 @@ export class ListComponent implements OnInit {
   constructor(public todoService: TodoService) {}
 
   ngOnInit(): void {
+    this.todoService.todoSubject.subscribe((list) => {
+      this.toDos = list;
+    });
     this.toDos = this.todoService.toDos;
     this.deletedToDos = this.todoService.deletedToDos;
     this.completedToDos = this.todoService.completedToDos;
