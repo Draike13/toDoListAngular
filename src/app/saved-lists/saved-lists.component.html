@@ -2,12 +2,33 @@
   <button (click)="switchFiller()" class="list-button" mat-raised-button>
     {{ list.listName }}
   </button>
-  <p *ngIf="showFiller">
-    <button mat-button class="button-icon">
-      <mat-icon>delete_outline</mat-icon>
-    </button>
-    <button (click)="reloadList(i)" class="button-icon" mat-button>
-      <mat-icon>launch</mat-icon>
-    </button>
-  </p>
+  <span *ngIf="showFiller">
+    <mat-icon
+      (click)="reloadList(i)"
+      matTooltip="Load"
+      matTooltipPosition="below"
+      matTooltipShowDelay="500"
+      matTooltipHideDelay="500"
+      class="button-icon"
+      >launch</mat-icon
+    >
+    <mat-icon
+      (click)="updateSavedList(i, list.listName)"
+      class="button-icon"
+      matTooltip="Update"
+      matTooltipPosition="below"
+      matTooltipShowDelay="500"
+      matTooltipHideDelay="500"
+      >done_outline</mat-icon
+    >
+    <mat-icon
+      (click)="deleteSavedList(i)"
+      class="button-icon"
+      matTooltip="Delete"
+      matTooltipPosition="below"
+      matTooltipShowDelay="500"
+      matTooltipHideDelay="500"
+      >delete_outline</mat-icon
+    >
+  </span>
 </div>

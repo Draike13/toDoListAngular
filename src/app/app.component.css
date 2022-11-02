@@ -19,3 +19,10 @@
 .mat-drawer-container {
   background-color: black;
 }
+.toggle-button {
+  transition: 500ms;
+  transition-timing-function: cubic-bezier(0.23, 1.06, 0.86, 1.36);
+}
+.spun {
+  transform: rotate(180deg);
+}

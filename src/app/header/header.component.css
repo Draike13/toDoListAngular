@@ -24,3 +24,12 @@ mat-toolbar {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: white;
 }
+
+.menu-button:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 42px #0fa, 0 0 82px #0fa,
+    0 0 92px #0fa;
+  color: white;
+  border-radius: 5px;
+  transition: 450ms ease-out;
+  background: transparent;
+}

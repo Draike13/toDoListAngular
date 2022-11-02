@@ -35,7 +35,14 @@
   <div class="right-side">
     <div class="button-container">
       <button [disabled]="i <= 0" (click)="moveUp(i)" mat-icon-button>
-        <mat-icon class="up-arrow-icon">arrow_upward</mat-icon>
+        <mat-icon
+          matTooltip="Move Up"
+          matTooltipPosition="after"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
+          class="up-arrow-icon"
+          >arrow_upward</mat-icon
+        >
       </button>
     </div>
     <div class="button-container">
@@ -43,6 +50,10 @@
         [disabled]="i >= todoService.toDos.length - 1"
         (click)="moveDown(i)"
         mat-icon-button
+        matTooltip="Move Down"
+        matTooltipPosition="after"
+        matTooltipShowDelay="500"
+        matTooltipHideDelay="500"
         class="down-arrow"
       >
         <mat-icon class="down-arrow-icon">arrow_downward</mat-icon>

@@ -23,7 +23,7 @@ import { TodoCardComponent } from './list/todo-card/todo-card.component';
 import { DialogTaskCompleteComponent } from './Dialog Boxes/dialog-task-complete/dialog-task-complete.component';
 import { DialogTaskAddComponent } from './Dialog Boxes/dialog-task-add/dialog-task-add.component';
 import { SavedListsComponent } from './saved-lists/saved-lists.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +52,7 @@ import { SavedListsComponent } from './saved-lists/saved-lists.component';
     MatInputModule,
     MatSidenavModule,
     MatDialogModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

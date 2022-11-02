@@ -25,4 +25,21 @@ export class SavedListsComponent implements OnInit {
   switchFiller() {
     this.showFiller = !this.showFiller;
   }
+
+  updateSavedList(i: number, listName: string) {
+    let list: Todo[] = this.todoService.toDos.splice(
+      0,
+      this.todoService.toDos.length
+    );
+    let savedList: SavedList = { listName: listName, list: list };
+    this.todoService.savedListsArray.splice(i, 1, savedList);
+    this.todoService.todoSubject.next(this.todoService.toDos);
+    this.reloadList(i);
+    this.todoService.todoSubject.next(this.todoService.toDos);
+  }
+  deleteSavedList(index: number) {
+    this.todoService.savedListsArray.splice(index, 1);
+    this.todoService.todoSubject.next(this.todoService.toDos);
+    this.todoService.toDos.splice(0, this.todoService.toDos.length);
+  }
 }

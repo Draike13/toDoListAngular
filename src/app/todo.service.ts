@@ -81,9 +81,7 @@ export class TodoService {
   createSavedList(listName: string) {
     let list: Todo[] = this.toDos.splice(0, this.toDos.length);
     let savedList: SavedList = { listName: listName, list: list };
-    console.log(this.savedListsArray);
     this.savedListsArray.push(savedList);
-    console.log(this.savedListsArray);
     this.todoSubject.next(this.toDos);
   }
 

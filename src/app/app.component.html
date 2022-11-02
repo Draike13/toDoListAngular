@@ -8,19 +8,17 @@
       [list]="list"
       [i]="i"
     ></app-saved-lists>
-    <!-- <button (click)="showFiller = !showFiller" mat-raised-button>
-      List Name Here:
-    </button> -->
   </mat-drawer>
 
   <div class="right-container">
     <button
       class="toggle-button"
       type="button"
-      mat-button
       (click)="drawer.toggle()"
+      mat-icon-button
+      [ngClass]="{ spun: drawer.opened }"
     >
-      >>
+      <mat-icon>arrow_forward</mat-icon>
     </button>
     <app-list class="the-app-list"></app-list>
   </div>

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
-import { Todo } from './todo.model';
+import { Component } from '@angular/core';
+
 import { TodoService } from './todo.service';
 
 @Component({
