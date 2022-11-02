@@ -20,6 +20,13 @@
     >
       <mat-icon>arrow_forward</mat-icon>
     </button>
+
+    <mat-icon
+      *ngIf="!this.todoService.toDos.length"
+      (click)="this.todoService.addTaskDialog()"
+      class="add-button"
+      >add_box</mat-icon
+    >
     <app-list class="the-app-list"></app-list>
   </div>
 </mat-drawer-container>

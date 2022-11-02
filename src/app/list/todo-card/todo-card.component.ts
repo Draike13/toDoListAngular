@@ -45,7 +45,5 @@ export class TodoCardComponent implements OnInit {
     this.todoService.toDos.splice(currentIndex + 1, 0, removed[0]);
   }
 
-  addTaskDialog() {
-    this.dialog.open(DialogTaskAddComponent);
-  }
+
 }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SavedList, Todo } from './todo.model';
+import { DialogTaskAddComponent } from './Dialog Boxes/dialog-task-add/dialog-task-add.component';
+import { MatDialog } from '@angular/material/dialog';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +25,7 @@ export class TodoService {
   ];
   todoSubject: Subject<Todo[]> = new Subject<Todo[]>();
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.toDos.forEach((todo, index) => {
       this.state[index] = 'normal';
     });
@@ -95,5 +97,9 @@ export class TodoService {
   replaceTodoList(newList: Todo[]) {
     this.toDos = newList;
     this.todoSubject.next(this.toDos);
+  }
+
+  addTaskDialog() {
+    this.dialog.open(DialogTaskAddComponent);
   }
 }

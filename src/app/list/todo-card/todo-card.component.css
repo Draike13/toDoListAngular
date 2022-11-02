@@ -14,15 +14,17 @@ body {
   padding: 0px 0px;
   padding-left: 2px;
   padding-right: 2px;
+  float: left;
 }
 
 .add-button {
+  float: left;
+  margin-top: 5px;
+  padding-top: 4px;
+  padding-left: 4px;
   min-width: 25px;
   width: 25px;
   font-size: large;
-  padding: 0px 0px;
-  padding-left: 2px;
-  padding-right: 2px;
 }
 
 .delete-button:hover {
@@ -35,6 +37,7 @@ body {
   width: 40px;
   font-size: x-small;
   padding: 0px 0px;
+  float: left;
 }
 
 .edit-button:hover {
@@ -49,6 +52,7 @@ body {
   border-radius: 5px;
   transition: 450ms ease-out;
   background: transparent;
+  cursor: pointer;
 }
 
 .card-title {

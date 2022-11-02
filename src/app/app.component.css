@@ -26,3 +26,13 @@
 .spun {
   transform: rotate(180deg);
 }
+
+.add-button {
+  font-size: x-large;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
