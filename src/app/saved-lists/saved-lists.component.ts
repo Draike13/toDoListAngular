@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { SavedList, Todo } from '../todo.model';
+import { DialogSavedListDeleteComponent } from '../Dialog Boxes/dialog-saved-list-delete/dialog-saved-list-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-saved-lists',
@@ -12,7 +14,7 @@ export class SavedListsComponent implements OnInit {
   @Input() i: number = 0;
   showFiller = false;
 
-  constructor(public todoService: TodoService) {}
+  constructor(public todoService: TodoService, public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -37,9 +39,8 @@ export class SavedListsComponent implements OnInit {
     this.reloadList(i);
     this.todoService.todoSubject.next(this.todoService.toDos);
   }
-  deleteSavedList(index: number) {
-    this.todoService.savedListsArray.splice(index, 1);
-    this.todoService.todoSubject.next(this.todoService.toDos);
-    this.todoService.toDos.splice(0, this.todoService.toDos.length);
+
+  deleteSavedListDialog(index: number) {
+    this.dialog.open(DialogSavedListDeleteComponent);
   }
 }

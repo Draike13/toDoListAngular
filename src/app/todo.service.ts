@@ -102,4 +102,10 @@ export class TodoService {
   addTaskDialog() {
     this.dialog.open(DialogTaskAddComponent);
   }
+
+  deleteSavedList(index: number) {
+    this.savedListsArray.splice(index, 1);
+    this.todoSubject.next(this.toDos);
+    this.toDos.splice(0, this.toDos.length);
+  }
 }

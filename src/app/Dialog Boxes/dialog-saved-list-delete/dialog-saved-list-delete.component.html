@@ -1,8 +1,8 @@
-<h2 mat-dialog-title>Delete List?</h2>
-<mat-dialog-content>Delete the loaded list?</mat-dialog-content>
+<h2 mat-dialog-title>Delete Saved List?</h2>
+<mat-dialog-content>Really perminately delete this list?</mat-dialog-content>
 <div class="dialog-list-delete-buttons">
   <button
-    (click)="this.todoService.deleteList()"
+    (click)="this.todoService.deleteSavedList(data)"
     mat-button
     mat-dialog-close
     cdkFocusInitial

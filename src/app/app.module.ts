@@ -24,6 +24,7 @@ import { DialogTaskCompleteComponent } from './Dialog Boxes/dialog-task-complete
 import { DialogTaskAddComponent } from './Dialog Boxes/dialog-task-add/dialog-task-add.component';
 import { SavedListsComponent } from './saved-lists/saved-lists.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DialogSavedListDeleteComponent } from './Dialog Boxes/dialog-saved-list-delete/dialog-saved-list-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     DialogTaskCompleteComponent,
     DialogTaskAddComponent,
     SavedListsComponent,
+    DialogSavedListDeleteComponent,
   ],
   imports: [
     BrowserModule,
